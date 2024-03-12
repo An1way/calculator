@@ -9,6 +9,7 @@ const plusBtn = document.getElementById('plus')
 const minusBtn = document.getElementById('minus')
 const umnojenieBtn = document.getElementById('umnojenie')
 const delenieBtn = document.getElementById('delenie')
+const stepenBtn = document.getElementById('stepen')
 let action = '+'
 
 
@@ -26,6 +27,10 @@ umnojenieBtn.onclick = function () {
 }
 delenieBtn.onclick = function () {
     action = '/'
+}
+
+stepenBtn.onclick = function () {
+    action = '**'
 }
 
 function printResult(result) {
@@ -51,6 +56,10 @@ function computeNumbersWitchAction(input1, input2,actionSymbol) {
      }
     else if (actionSymbol == '/') {
         return num1 / num2
+     }
+
+     if (actionSymbol == '**') {
+        return num1 ** num2
      }
     return actionSymbol = '+' ? num1 + num2 : num1 - num2
     return actionSymbol = '*' ? num1 * num2 : num1 / num2
